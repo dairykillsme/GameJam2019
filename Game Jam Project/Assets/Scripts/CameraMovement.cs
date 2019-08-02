@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Transform player1;
-    public Transform player2;
+    Transform player1,
+        player2;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+         player1 = GameManager.instance.player1.GetComponent<Transform>();
+         player2 = GameManager.instance.player2.GetComponent<Transform>();
     }
 
     // Update is called once per frame

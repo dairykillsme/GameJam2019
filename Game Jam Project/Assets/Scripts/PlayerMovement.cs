@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Declan if a player tries to move call GameManager.instance.RequestMove()
+        //if true they can move
     }
 }

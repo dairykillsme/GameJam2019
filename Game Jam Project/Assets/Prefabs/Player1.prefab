@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTouchingFloor: 1
   topSpeed: 10
-  drag: 20
+  drag: 50
   jumpForce: 20
   moveForce: 100
   leftKey: 97

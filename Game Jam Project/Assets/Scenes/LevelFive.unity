@@ -14534,15 +14534,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.12
       objectReference: {fileID: 0}
-    - target: {fileID: 4484450359790613156, guid: f3cf44a7b327eb944bb8db6cfe459971,
+    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
         type: 3}
-      propertyPath: m_TagString
-      value: Ground
+      propertyPath: platforms.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
         type: 3}
       propertyPath: initialState
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: platforms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1531453729}
+    - target: {fileID: 4484450359790613156, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3cf44a7b327eb944bb8db6cfe459971, type: 3}

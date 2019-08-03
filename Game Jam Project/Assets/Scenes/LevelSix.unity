@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0104b881883834f85facbd0f993694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 1517774870}
+  platforms: []
   buttonDownSprite: {fileID: -3497714867003365594, guid: f6f71d51480b06b4f9e8f2ccbda9ba60,
     type: 3}
   initialState: 1
@@ -753,12 +753,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &445972833 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4484450359790613156, guid: f3cf44a7b327eb944bb8db6cfe459971,
-    type: 3}
-  m_PrefabInstance: {fileID: 735924752}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &462359350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1835,7 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0104b881883834f85facbd0f993694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 445972833}
+  platforms: []
   buttonDownSprite: {fileID: 8526769706059290572, guid: b19a4ca7e7832d6409bf1fcd86dfba9e,
     type: 3}
   initialState: 1
@@ -1946,12 +1940,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6391080714316628860, guid: 3b7ababe3e1c526459e9d2ea283a1a69,
     type: 3}
   m_PrefabInstance: {fileID: 2120585257}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1517774870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4484450359790613156, guid: f3cf44a7b327eb944bb8db6cfe459971,
-    type: 3}
-  m_PrefabInstance: {fileID: 917602866}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1566386624 stripped
 Transform:

@@ -58,8 +58,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(jumpKey))
             {
-                rb2d.AddForce(Vector2.up * jumpForce);
-                //isTouchingFloor = false;
+                if (rb2d.velocity.y <= 0)
+                {
+                    rb2d.velocity += Vector2.up * jumpForce;
+                    //isTouchingFloor = false;
+                }
             }
         }
 

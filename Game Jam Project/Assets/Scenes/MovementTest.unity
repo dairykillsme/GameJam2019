@@ -340,7 +340,7 @@ MonoBehaviour:
   isTouchingFloor: 1
   topSpeed: 10
   drag: 0
-  jumpForce: 1000
+  jumpForce: 100
   moveForce: 100
   leftKey: 276
   rightKey: 275
@@ -967,6 +967,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.061006017
       objectReference: {fileID: 0}
+    - target: {fileID: 2461635693143483806, guid: 878d35a298f2a3c45a1081413fd7892c,
+        type: 3}
+      propertyPath: jumpForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 878d35a298f2a3c45a1081413fd7892c, type: 3}
 --- !u!1001 &4935976042547147288
@@ -1024,7 +1029,7 @@ PrefabInstance:
     - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}
       propertyPath: jumpForce
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}

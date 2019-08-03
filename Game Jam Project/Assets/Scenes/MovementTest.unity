@@ -341,7 +341,7 @@ MonoBehaviour:
   topSpeed: 10
   drag: 0
   jumpForce: 20
-  moveForce: 100
+  moveForce: 75
   leftKey: 276
   rightKey: 275
   jumpKey: 273
@@ -499,6 +499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654176347530457521, guid: d3b218badad9bad468ec2d7463226067,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b218badad9bad468ec2d7463226067, type: 3}
@@ -1145,6 +1150,11 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2461635693143483806, guid: 878d35a298f2a3c45a1081413fd7892c,
+        type: 3}
+      propertyPath: moveForce
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 878d35a298f2a3c45a1081413fd7892c, type: 3}
 --- !u!1001 &4935976042547147288
@@ -1197,7 +1207,7 @@ PrefabInstance:
     - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}
       propertyPath: moveForce
-      value: 100
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}

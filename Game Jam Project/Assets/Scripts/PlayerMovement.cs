@@ -16,12 +16,14 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 preFreezeVelocity;
     bool frozen = false;
-    public bool wasFrozen = false;
+    bool wasFrozen = false;
+    Animator playerAnim;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = this.gameObject.GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!frozen)
         {
+            playerAnim.SetBool("glitching", true);
             frozen = true;
             preFreezeVelocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y);
             rb2d.bodyType = RigidbodyType2D.Static;
@@ -86,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (frozen)
         {
+            playerAnim.SetBool("glitching", false);
             rb2d.bodyType = RigidbodyType2D.Dynamic;
             rb2d.velocity = preFreezeVelocity;
             frozen = false;

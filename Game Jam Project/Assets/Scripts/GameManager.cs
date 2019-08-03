@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
+        DontDestroyOnLoad(player1);
+        DontDestroyOnLoad(player2);
     }
 
     // Update is called once per frame

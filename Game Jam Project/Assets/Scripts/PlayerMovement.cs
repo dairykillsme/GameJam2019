@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    bool isTouchingFloor;
+    bool isTouchingFloor = true;
     public int topSpeed = 10;
     public int drag = 10;
     public int jumpForce = 250;
@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 preFreezeVelocity;
     bool frozen = false;
+    bool isJumping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(jumpKey) || Input.GetKey(rightKey) || Input.GetKey(leftKey))
+        if (Input.GetKey(jumpKey) || Input.GetKey(rightKey) || Input.GetKey(leftKey))
         {
             GameManager.instance.RequestMove(this.gameObject);
             //Move();
@@ -47,12 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
     internal void Move()
     {
-        
         if (isTouchingFloor)
         {
-            if (Input.GetKeyDown(jumpKey))
+            if (Input.GetKey(jumpKey))
             {
                 rb2d.AddForce(Vector2.up * jumpForce);
+                isTouchingFloor = false;
             }
         }
 
@@ -89,17 +90,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag  == "Ground" || collision.tag == "Player")
-        {
-            isTouchingFloor = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
         if (collision.tag == "Ground" || collision.tag == "Player")
         {
-            isTouchingFloor = false;
+            isTouchingFloor = true;
         }
     }
 }

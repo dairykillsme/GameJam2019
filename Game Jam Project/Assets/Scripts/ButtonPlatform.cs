@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class ButtonPlatform : MonoBehaviour
 {
-    public GameObject platform;
+    public List<GameObject> platforms;
     public Sprite buttonDownSprite;
     public bool initialState = true;
     Sprite buttonUpSprite;
     // Start is called before the first frame update
     void Start()
     {
-        platform.GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.3f);
-        foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
-        {
-            collider2D.enabled = initialState;
-        }
-        buttonUpSprite = GetComponent<SpriteRenderer>().sprite;
-        if (initialState)
-        {
-            platform.GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        else
+        foreach (GameObject platform in platforms)
         {
             platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+            {
+                collider2D.enabled = initialState;
+            }
+            buttonUpSprite = GetComponent<SpriteRenderer>().sprite;
+            if (initialState)
+            {
+                platform.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else
+            {
+                platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            }
         }
     }
 
@@ -37,18 +40,21 @@ public class ButtonPlatform : MonoBehaviour
     {
         if (other.tag == "Player" || other.tag == "Ground")
         {
-            GetComponent<SpriteRenderer>().sprite = buttonDownSprite;
-            if (initialState)
+            foreach (GameObject platform in platforms)
             {
-                platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
-            }
-            else
-            {
-                platform.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
-            {
-                collider2D.enabled = !initialState;
+                GetComponent<SpriteRenderer>().sprite = buttonDownSprite;
+                if (initialState)
+                {
+                    platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+                }
+                else
+                {
+                    platform.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+                {
+                    collider2D.enabled = !initialState;
+                }
             }
         }
     }
@@ -57,18 +63,21 @@ public class ButtonPlatform : MonoBehaviour
     {
         if (other.tag == "Player" || other.tag == "Ground")
         {
-            GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
-            if (initialState)
+            foreach (GameObject platform in platforms)
             {
-                platform.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-            else
-            {
-                platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
-            }
-            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
-            {
-                collider2D.enabled = initialState;
+                GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
+                if (initialState)
+                {
+                    platform.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+                }
+                foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+                {
+                    collider2D.enabled = initialState;
+                }
             }
         }
     }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject player1;
     public GameObject player2;
+    public GameObject mainCamera;
 
     bool player1Request = false;
     bool player2Request = false;
@@ -16,9 +17,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        DontDestroyOnLoad(this);
-        DontDestroyOnLoad(player1);
-        DontDestroyOnLoad(player2);
     }
 
     // Update is called once per frame
@@ -69,7 +67,16 @@ public class GameManager : MonoBehaviour
 
     internal void PlayerDie()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine("GlitchToDeath");
     }
 
+    IEnumerator GlitchToDeath()
+    {
+        for (float ft = 0f; ft <= 5; ft += 0.1f)
+        {
+            
+            yield return null;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

@@ -12,27 +12,28 @@ using UnityEngine;
 [ExecuteInEditMode]
 [AddComponentMenu("Image Effects/GlitchEffect")]
 [RequireComponent(typeof(Camera))]
-public class GlitchEffect : MonoBehaviour
+
+public class GlitchEffects : MonoBehaviour
 {
     public Texture2D displacementMap;
     public Shader Shader;
     [Header("Glitch Intensity")]
 
-    [Range(0, 1)]
+    [Range(0, 5)]
     public float intensity;
 
-    [Range(0, 1)]
+    [Range(0, 5)]
     public float flipIntensity;
 
-    [Range(0, 1)]
+    [Range(0, 5)]
     public float colorIntensity;
 
     private float _glitchup;
     private float _glitchdown;
     private float flicker;
-    private float _glitchupTime = 0.05f;
-    private float _glitchdownTime = 0.05f;
-    private float _flickerTime = 0.5f;
+    private float _glitchupTime = 0.00000005f;
+    private float _glitchdownTime = 0.00000005f;
+    private float _flickerTime = 0.0000000005f;
     private Material _material;
 
     void Start()

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb2d;
     public bool isTouchingFloor = true;
     public int topSpeed = 10;
-    public int drag = 10;
+    public int drag = 30;
     public int jumpForce = 250;
     public int moveForce = 100;
     public KeyCode leftKey = KeyCode.None;

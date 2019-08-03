@@ -67,15 +67,21 @@ public class GameManager : MonoBehaviour
 
     internal void PlayerDie()
     {
+        Debug.Log("Glitch To Death");
         StartCoroutine("GlitchToDeath");
     }
 
     IEnumerator GlitchToDeath()
     {
+        GlitchEffects glitch = mainCamera.GetComponent<GlitchEffects>();
+        glitch.enabled = true;
         for (float ft = 0f; ft <= 5; ft += 0.1f)
         {
-            
-            yield return null;
+            player1.GetComponent<PlayerMovement>().Freeze();
+            player2.GetComponent<PlayerMovement>().Freeze();
+            glitch.colorIntensity = ft;
+            glitch.flipIntensity = ft;
+            yield return new WaitForSeconds(.001f);
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     bool player1Finish = false;
     bool player2Finish = false;
 
+    bool ending = false;
     float glitchiness = 0;
     GlitchEffects glitch;
 
@@ -54,28 +55,31 @@ public class GameManager : MonoBehaviour
 
     internal void MoveFreeze()
     {
-        if (player2Request && !player1Request)
+        if (!ending)
         {
-            glitchiness = 0;
-            player2.GetComponent<PlayerMovement>().UnFreeze();
-            player2.GetComponent<PlayerMovement>().Move();
-            player1.GetComponent<PlayerMovement>().Freeze();
+            if (player2Request && !player1Request)
+            {
+                glitchiness = 0;
+                player2.GetComponent<PlayerMovement>().UnFreeze();
+                player2.GetComponent<PlayerMovement>().Move();
+                player1.GetComponent<PlayerMovement>().Freeze();
+            }
+            else if (!player2Request && player1Request)
+            {
+                glitchiness = 0;
+                player1.GetComponent<PlayerMovement>().UnFreeze();
+                player1.GetComponent<PlayerMovement>().Move();
+                player2.GetComponent<PlayerMovement>().Freeze();
+            }
+            else if (player1Request && player2Request)
+            {
+                glitchiness += .05f;
+                player1.GetComponent<PlayerMovement>().Freeze();
+                player2.GetComponent<PlayerMovement>().Freeze();
+            }
+            player1Request = false;
+            player2Request = false;
         }
-        else if (!player2Request && player1Request)
-        {
-            glitchiness = 0;
-            player1.GetComponent<PlayerMovement>().UnFreeze();
-            player1.GetComponent<PlayerMovement>().Move();
-            player2.GetComponent<PlayerMovement>().Freeze();
-        }
-        else if (player1Request && player2Request)
-        {
-            glitchiness += .05f;
-            player1.GetComponent<PlayerMovement>().Freeze();
-            player2.GetComponent<PlayerMovement>().Freeze();
-        }
-        player1Request = false;
-        player2Request = false;
     }
 
     internal void PlayerDie()
@@ -85,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GlitchToDeath()
     {
+        ending = true;
         glitch.enabled = true;
         for (float ft = 0f; ft <= 5; ft += 0.1f)
         {
@@ -94,6 +99,7 @@ public class GameManager : MonoBehaviour
             glitch.flipIntensity = ft;
             yield return new WaitForSeconds(.001f);
         }
+        ending = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

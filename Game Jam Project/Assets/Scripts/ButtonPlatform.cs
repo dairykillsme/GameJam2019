@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class ButtonPlatform : MonoBehaviour
 {
-    public GameObject platform;
+    public List<GameObject> platforms;
     public Sprite buttonDownSprite;
+    public bool initialState = true;
     Sprite buttonUpSprite;
     // Start is called before the first frame update
     void Start()
     {
-        platform.GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.3f);
-        foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
-        {
-            collider2D.enabled = false;
-        }
         buttonUpSprite = GetComponent<SpriteRenderer>().sprite;
+        foreach (GameObject platform in platforms)
+        {
+            platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+            {
+                collider2D.enabled = initialState;
+            }
+            if (initialState)
+            {
+                platform.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else
+            {
+                platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -29,23 +41,43 @@ public class ButtonPlatform : MonoBehaviour
         if (other.tag == "Player" || other.tag == "Ground")
         {
             GetComponent<SpriteRenderer>().sprite = buttonDownSprite;
-            platform.GetComponent<SpriteRenderer>().color = Color.white;
-            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+            foreach (GameObject platform in platforms)
             {
-                collider2D.enabled = true;
+                if (initialState)
+                {
+                    platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+                }
+                else
+                {
+                    platform.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+                {
+                    collider2D.enabled = !initialState;
+                }
             }
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
+        GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
         if (other.tag == "Player" || other.tag == "Ground")
         {
-            GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
-            platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
-            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+            foreach (GameObject platform in platforms)
             {
-                collider2D.enabled = false;
+                if (initialState)
+                {
+                    platform.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+                }
+                foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+                {
+                    collider2D.enabled = initialState;
+                }
             }
         }
     }

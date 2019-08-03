@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
 
     internal void PlayerDie()
     {
-        Debug.Log("Glitch To Death");
         StartCoroutine("GlitchToDeath");
     }
 

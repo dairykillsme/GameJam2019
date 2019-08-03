@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.tag == "Ground")
+        if (collision.tag == "Ground" && rb2d.velocity.y <= 0)
         {
             if (wasFrozen)
             {

@@ -307,7 +307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b034794548368498d96df142a96960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTouchingFloor: 1
   topSpeed: 10
   drag: 30
   jumpForce: 20
@@ -376,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511500367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.699, y: 0.799, z: 0}
+  m_LocalPosition: {x: -1.699, y: 6.58, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 1696225658}
@@ -1187,6 +1186,16 @@ PrefabInstance:
       propertyPath: drag
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3797440587117530285, guid: 878d35a298f2a3c45a1081413fd7892c,
+        type: 3}
+      propertyPath: isTouchingFloor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797440587117530283, guid: 878d35a298f2a3c45a1081413fd7892c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.564
+      objectReference: {fileID: 0}
     - target: {fileID: 3797440587231511944, guid: 878d35a298f2a3c45a1081413fd7892c,
         type: 3}
       propertyPath: m_Layer
@@ -1281,6 +1290,11 @@ PrefabInstance:
       propertyPath: topSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: isTouchingFloor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4935976042710995532, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1289,7 +1303,7 @@ PrefabInstance:
     - target: {fileID: 4935976042710995532, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.799
+      value: 6.58
       objectReference: {fileID: 0}
     - target: {fileID: 4935976042710995532, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}

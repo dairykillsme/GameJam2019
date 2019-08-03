@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     bool player1Request = false;
     bool player2Request = false;
+    bool player1Finish = false;
+    bool player2Finish = false;
 
     float glitchiness = 0;
     GlitchEffects glitch;
@@ -95,8 +97,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    internal void FinishLevel()
+    internal void FinishLevel(GameObject player)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (player == player1)
+        {
+            player1Finish = true;
+        }
+        else
+        {
+            player2Finish = true;
+        }
+        if (player1Finish && player2Finish)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelExit : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class LevelExit : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameManager.instance.FinishLevel();
+            GameManager.instance.FinishLevel(other.gameObject);
         }
     }
 }

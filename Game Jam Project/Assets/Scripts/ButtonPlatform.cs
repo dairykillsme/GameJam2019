@@ -11,6 +11,7 @@ public class ButtonPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        buttonUpSprite = GetComponent<SpriteRenderer>().sprite;
         foreach (GameObject platform in platforms)
         {
             platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
@@ -18,7 +19,6 @@ public class ButtonPlatform : MonoBehaviour
             {
                 collider2D.enabled = initialState;
             }
-            buttonUpSprite = GetComponent<SpriteRenderer>().sprite;
             if (initialState)
             {
                 platform.GetComponent<SpriteRenderer>().color = Color.white;
@@ -40,9 +40,9 @@ public class ButtonPlatform : MonoBehaviour
     {
         if (other.tag == "Player" || other.tag == "Ground")
         {
+            GetComponent<SpriteRenderer>().sprite = buttonDownSprite;
             foreach (GameObject platform in platforms)
             {
-                GetComponent<SpriteRenderer>().sprite = buttonDownSprite;
                 if (initialState)
                 {
                     platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
@@ -61,11 +61,11 @@ public class ButtonPlatform : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
         if (other.tag == "Player" || other.tag == "Ground")
         {
             foreach (GameObject platform in platforms)
             {
-                GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
                 if (initialState)
                 {
                     platform.GetComponent<SpriteRenderer>().color = Color.white;

@@ -290,7 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0104b881883834f85facbd0f993694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 4484450359790613156}
+  platforms:
+  - {fileID: 4484450359790613156}
   buttonDownSprite: {fileID: 8526769706059290572, guid: b19a4ca7e7832d6409bf1fcd86dfba9e,
     type: 3}
   initialState: 1

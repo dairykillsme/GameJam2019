@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    bool isTouchingFloor = true;
+    public bool isTouchingFloor = true;
     public int topSpeed = 10;
     public int drag = 10;
     public int jumpForce = 250;
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 preFreezeVelocity;
     bool frozen = false;
-    bool isJumping = false;
+    public bool wasFrozen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -85,14 +85,26 @@ public class PlayerMovement : MonoBehaviour
             rb2d.bodyType = RigidbodyType2D.Dynamic;
             rb2d.velocity = preFreezeVelocity;
             frozen = false;
+            if (isTouchingFloor)
+            {
+                wasFrozen = true;
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.tag == "Ground" || collision.tag == "Player")
         {
-            isTouchingFloor = true;
+            if (wasFrozen)
+            {
+                wasFrozen = false;
+            }
+            else
+            {
+                isTouchingFloor = true;
+            }
         }
     }
 }

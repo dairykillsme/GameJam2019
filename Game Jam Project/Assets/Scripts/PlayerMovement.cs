@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.tag == "Ground" || collision.tag == "Player")
+        if (collision.tag == "Ground")
         {
             if (wasFrozen)
             {
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground" || collision.tag == "Player")
+        if (collision.tag == "Ground")
         {
             isTouchingFloor = false;
         }

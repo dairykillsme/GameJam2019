@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     bool isTouchingFloor;
     public int topSpeed = 10;
     public int drag = 10;
-    public int jumpForce = 500;
+    public int jumpForce = 250;
     public int moveForce = 100;
 
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Move()
+    internal void Move()
     {
         if (isTouchingFloor)
         {

@@ -36,6 +36,14 @@ public class ButtonPlatform : MonoBehaviour
         
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player" || other.tag == "Ground")
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player" || other.tag == "Ground")
@@ -61,6 +69,7 @@ public class ButtonPlatform : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        GetComponent<AudioSource>().Play();
         GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
         if (other.tag == "Player" || other.tag == "Ground")
         {

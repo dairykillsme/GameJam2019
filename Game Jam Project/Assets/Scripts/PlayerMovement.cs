@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 preFreezeVelocity;
     bool frozen = false;
     bool wasFrozen = false;
+    float localScale;
     Animator playerAnim;
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+        localScale = transform.localScale.x;
     }
 
     // Update is called once per frame
@@ -50,6 +53,28 @@ public class PlayerMovement : MonoBehaviour
                 rb2d.AddForce(Vector2.right * drag);
             }
         }
+
+        UpdateAnimations();
+    }
+
+    private void UpdateAnimations()
+    {
+        if (rb2d.velocity.x > 0)
+        {
+            Vector2 flipX = new Vector2(localScale, transform.localScale.y);
+            transform.localScale = flipX;
+            playerAnim.SetTrigger("moving");
+        }
+        else if (rb2d.velocity.x < 0)
+        {
+            Vector2 flipX = new Vector2(-localScale, transform.localScale.y);
+            transform.localScale = flipX;
+            playerAnim.SetTrigger("moving");
+        }
+        else
+        {
+            playerAnim.SetTrigger("idle");
+        }
     }
 
     internal void Move()
@@ -61,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
                 if (rb2d.velocity.y <= 0)
                 {
                     rb2d.velocity += Vector2.up * jumpForce;
-                    //isTouchingFloor = false;
+                    isTouchingFloor = false;
                 }
             }
         }
@@ -103,27 +128,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        
-        if (collision.tag == "Ground" && rb2d.velocity.y <= 0)
+        if (other.tag == "Ground")
         {
-            if (wasFrozen)
-            {
-                wasFrozen = false;
-            }
-            else
-            {
-                isTouchingFloor = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Ground")
-        {
-            isTouchingFloor = false;
+            isTouchingFloor = true;
         }
     }
 }

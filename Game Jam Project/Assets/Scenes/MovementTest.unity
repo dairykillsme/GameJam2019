@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372640575}
   - component: {fileID: 372640576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SolidHat
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0047512557, y: 0.06887707}
+  m_Offset: {x: -0.0011363039, y: 0.07657558}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -251,7 +251,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.050069068, y: 0.023921669}
+  m_Size: {x: 0.102310255, y: 0.010235429}
   m_EdgeRadius: 0
 --- !u!1 &511500367
 GameObject:
@@ -340,7 +340,7 @@ MonoBehaviour:
   isTouchingFloor: 1
   topSpeed: 10
   drag: 0
-  jumpForce: 100
+  jumpForce: 20
   moveForce: 100
   leftKey: 276
   rightKey: 275
@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1130901523}
   - component: {fileID: 1130901524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SolidHat
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0047512557, y: 0.06887707}
+  m_Offset: {x: 0.0007628603, y: 0.07472224}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -488,7 +488,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.050069068, y: 0.023921669}
+  m_Size: {x: 0.09878255, y: 0.009950295}
   m_EdgeRadius: 0
 --- !u!1 &1696225657
 GameObject:
@@ -768,6 +768,31 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.drawMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4797397391846392833, guid: d3b218badad9bad468ec2d7463226067,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986403183181750854, guid: d3b218badad9bad468ec2d7463226067,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986403183181750854, guid: d3b218badad9bad468ec2d7463226067,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.005236835
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986403183181750854, guid: d3b218badad9bad468ec2d7463226067,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.05714369
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986403183181750854, guid: d3b218badad9bad468ec2d7463226067,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.6694202
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b218badad9bad468ec2d7463226067, type: 3}
 --- !u!1001 &77721864637652948
@@ -937,6 +962,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1.12
       objectReference: {fileID: 0}
+    - target: {fileID: 2461635693143483806, guid: 878d35a298f2a3c45a1081413fd7892c,
+        type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2461635693143483795, guid: 878d35a298f2a3c45a1081413fd7892c,
         type: 3}
       propertyPath: m_Offset.x
@@ -967,11 +997,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.061006017
       objectReference: {fileID: 0}
-    - target: {fileID: 2461635693143483806, guid: 878d35a298f2a3c45a1081413fd7892c,
-        type: 3}
-      propertyPath: jumpForce
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 878d35a298f2a3c45a1081413fd7892c, type: 3}
 --- !u!1001 &4935976042547147288
@@ -985,61 +1010,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995528, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995528, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995528, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.03982825
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.15788238
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.00014073029
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0010588095
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: moveForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: jumpForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: drag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
-        type: 3}
-      propertyPath: topSpeed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4935976042710995532, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}
@@ -1105,6 +1075,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: moveForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995530, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: topSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.03982825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.15788238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00014073029
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995529, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0010588095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995528, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995528, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935976042710995528, guid: d4ca8d6872271194e8b675ad2be83976,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4935976044206631778, guid: d4ca8d6872271194e8b675ad2be83976,
         type: 3}

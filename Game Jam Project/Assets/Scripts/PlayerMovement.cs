@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(jumpKey))
             {
                 rb2d.AddForce(Vector2.up * jumpForce);
-                
+                isTouchingFloor = false;
             }
         }
 

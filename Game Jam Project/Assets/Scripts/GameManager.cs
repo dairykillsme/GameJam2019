@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
 
+    bool player1Request = false;
+    bool player2Request = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +24,34 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public bool RequestMove(GameObject me)
+    void LateUpdate()
     {
-        return true;
+        MoveFreeze();
+    }
+
+    public void RequestMove(GameObject player)
+    {
+        if (player == player1)
+        {
+            player1Request = true;
+        }
+        else
+        {
+            player2Request = true;
+        }
+    }
+
+    internal void MoveFreeze()
+    {
+        if (player2Request && !player1Request)
+        {
+            player2.GetComponent<PlayerMovement>().Move();
+        }
+        else if (!player2Request && player1Request)
+        {
+            player1.GetComponent<PlayerMovement>().Move();
+        }
+        player1Request = false;
+        player2Request = false;
     }
 }

@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GlitchToDeath()
     {
+        GetComponent<AudioSource>().Play();
         ending = true;
         glitch.enabled = true;
         for (float ft = 0f; ft <= 5; ft += 0.1f)

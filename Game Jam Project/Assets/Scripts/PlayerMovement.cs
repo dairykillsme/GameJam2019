@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (rb2d.velocity.y <= 0)
                 {
+                    GetComponent<AudioSource>().Play();
                     rb2d.velocity += Vector2.up * jumpForce;
                     isTouchingFloor = false;
                 }

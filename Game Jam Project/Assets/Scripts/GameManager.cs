@@ -45,11 +45,20 @@ public class GameManager : MonoBehaviour
     {
         if (player2Request && !player1Request)
         {
+            player2.GetComponent<PlayerMovement>().UnFreeze();
             player2.GetComponent<PlayerMovement>().Move();
+            player1.GetComponent<PlayerMovement>().Freeze();
         }
         else if (!player2Request && player1Request)
         {
+            player1.GetComponent<PlayerMovement>().UnFreeze();
             player1.GetComponent<PlayerMovement>().Move();
+            player2.GetComponent<PlayerMovement>().Freeze();
+        }
+        else if (player1Request && player2Request)
+        {
+            player1.GetComponent<PlayerMovement>().Freeze();
+            player2.GetComponent<PlayerMovement>().Freeze();
         }
         player1Request = false;
         player2Request = false;

@@ -13,16 +13,24 @@ public class GameManager : MonoBehaviour
     bool player1Request = false;
     bool player2Request = false;
 
+    float glitchiness = 0;
+    GlitchEffects glitch;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        glitch = mainCamera.GetComponent<GlitchEffects>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (glitchiness < 1)
+        {
+            glitch.flipIntensity = glitchiness;
+            glitch.intensity = glitchiness;
+        }
     }
 
     void LateUpdate()
@@ -46,18 +54,21 @@ public class GameManager : MonoBehaviour
     {
         if (player2Request && !player1Request)
         {
+            glitchiness = 0;
             player2.GetComponent<PlayerMovement>().UnFreeze();
             player2.GetComponent<PlayerMovement>().Move();
             player1.GetComponent<PlayerMovement>().Freeze();
         }
         else if (!player2Request && player1Request)
         {
+            glitchiness = 0;
             player1.GetComponent<PlayerMovement>().UnFreeze();
             player1.GetComponent<PlayerMovement>().Move();
             player2.GetComponent<PlayerMovement>().Freeze();
         }
         else if (player1Request && player2Request)
         {
+            glitchiness += .05f;
             player1.GetComponent<PlayerMovement>().Freeze();
             player2.GetComponent<PlayerMovement>().Freeze();
         }
@@ -72,7 +83,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GlitchToDeath()
     {
-        GlitchEffects glitch = mainCamera.GetComponent<GlitchEffects>();
         glitch.enabled = true;
         for (float ft = 0f; ft <= 5; ft += 0.1f)
         {

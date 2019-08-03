@@ -11,7 +11,10 @@ public class ButtonPlatform : MonoBehaviour
     void Start()
     {
         platform.GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.3f);
-        platform.GetComponent<BoxCollider2D>().enabled = false;
+        foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+        {
+            collider2D.enabled = false;
+        }
         buttonUpSprite = GetComponent<SpriteRenderer>().sprite;
     }
 
@@ -27,7 +30,10 @@ public class ButtonPlatform : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = buttonDownSprite;
             platform.GetComponent<SpriteRenderer>().color = Color.white;
-            platform.GetComponent<BoxCollider2D>().enabled = true;
+            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+            {
+                collider2D.enabled = true;
+            }
         }
     }
 
@@ -37,7 +43,10 @@ public class ButtonPlatform : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
             platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
-            platform.GetComponent<BoxCollider2D>().enabled = false;
+            foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
+            {
+                collider2D.enabled = false;
+            }
         }
     }
 }

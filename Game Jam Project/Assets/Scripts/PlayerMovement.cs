@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    public bool isTouchingFloor = true;
+    bool isTouchingFloor = false;
     public int topSpeed = 10;
     public int drag = 30;
     public int jumpForce = 250;
@@ -52,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb2d.AddForce(Vector2.right * drag);
             }
+        }
+
+        if (rb2d.velocity.y < 0)
+        {
+            isTouchingFloor = false;
         }
 
         UpdateAnimations();

@@ -35,11 +35,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (isTouchingFloor)
         {
-            if (rb2d.velocity.x > 0)
+            if (rb2d.velocity.x > -1 && rb2d.velocity.x < 1)
+            {
+                rb2d.velocity = Vector2.zero;
+            }
+            else if (rb2d.velocity.x > 1)
             {
                 rb2d.AddForce(Vector2.left * drag);
             }
-            else if (rb2d.velocity.x < 0)
+            else if (rb2d.velocity.x < -1)
             {
                 rb2d.AddForce(Vector2.right * drag);
             }
@@ -53,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(jumpKey))
             {
                 rb2d.AddForce(Vector2.up * jumpForce);
-                isTouchingFloor = false;
+                //isTouchingFloor = false;
             }
         }
 
@@ -95,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.tag == "Ground" || collision.tag == "Player")
+        if (collision.tag == "Ground")
         {
             if (wasFrozen)
             {
@@ -110,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Ground" || collision.tag == "Player")
+        if (collision.tag == "Ground")
         {
             isTouchingFloor = false;
         }

@@ -6,6 +6,7 @@ public class ButtonPlatform : MonoBehaviour
 {
     public GameObject platform;
     public Sprite buttonDownSprite;
+    public bool initialState = true;
     Sprite buttonUpSprite;
     // Start is called before the first frame update
     void Start()
@@ -13,9 +14,17 @@ public class ButtonPlatform : MonoBehaviour
         platform.GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.3f);
         foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
         {
-            collider2D.enabled = false;
+            collider2D.enabled = initialState;
         }
         buttonUpSprite = GetComponent<SpriteRenderer>().sprite;
+        if (initialState)
+        {
+            platform.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        else
+        {
+            platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+        }
     }
 
     // Update is called once per frame
@@ -29,10 +38,17 @@ public class ButtonPlatform : MonoBehaviour
         if (other.tag == "Player" || other.tag == "Ground")
         {
             GetComponent<SpriteRenderer>().sprite = buttonDownSprite;
-            platform.GetComponent<SpriteRenderer>().color = Color.white;
+            if (initialState)
+            {
+                platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            }
+            else
+            {
+                platform.GetComponent<SpriteRenderer>().color = Color.white;
+            }
             foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
             {
-                collider2D.enabled = true;
+                collider2D.enabled = !initialState;
             }
         }
     }
@@ -42,10 +58,17 @@ public class ButtonPlatform : MonoBehaviour
         if (other.tag == "Player" || other.tag == "Ground")
         {
             GetComponent<SpriteRenderer>().sprite = buttonUpSprite;
-            platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            if (initialState)
+            {
+                platform.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else
+            {
+                platform.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            }
             foreach (BoxCollider2D collider2D in platform.GetComponents<BoxCollider2D>())
             {
-                collider2D.enabled = false;
+                collider2D.enabled = initialState;
             }
         }
     }

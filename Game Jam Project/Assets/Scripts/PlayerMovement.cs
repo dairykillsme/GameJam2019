@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public int drag = 10;
     public int jumpForce = 250;
     public int moveForce = 100;
+    public KeyCode leftKey = KeyCode.None;
+    public KeyCode rightKey = KeyCode.None;
+    public KeyCode jumpKey = KeyCode.None;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +23,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(leftKey) || Input.GetKey(rightKey) || Input.GetKey(jumpKey))
         {
             GameManager.instance.RequestMove(this.gameObject);
-            Move();
+            //Move();
         }
 
         if (isTouchingFloor)
@@ -43,19 +46,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isTouchingFloor)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(jumpKey))
             {
                 rb2d.AddForce(Vector2.up * jumpForce);
             }
         }
 
-        if (Input.GetKey(KeyCode.D) && rb2d.velocity.x < topSpeed)
+        if (Input.GetKey(rightKey) && rb2d.velocity.x < topSpeed)
         {
             rb2d.AddForce(Vector2.right * moveForce);
         }
 
-        if (Input.GetKey(KeyCode.A) && rb2d.velocity.x > -topSpeed)
+        if (Input.GetKey(leftKey) && rb2d.velocity.x > -topSpeed)
         {
+            Debug.Log("Gamers?");
             rb2d.AddForce(Vector2.left * moveForce);
         }
     }

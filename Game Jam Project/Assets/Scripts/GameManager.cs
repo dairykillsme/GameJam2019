@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public GameObject mainCamera;
+    public AudioSource glitchingSound;
 
     bool player1Request = false;
     bool player2Request = false;
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
     {
         if (glitchiness < 1)
         {
+            if (!glitchingSound.isPlaying && glitchiness > 0)
+            {
+                glitchingSound.Play();
+            }
             glitch.flipIntensity = glitchiness;
             glitch.intensity = glitchiness;
         }
@@ -60,6 +65,7 @@ public class GameManager : MonoBehaviour
             if (player2Request && !player1Request)
             {
                 glitchiness = 0;
+                glitchingSound.Stop();
                 player2.GetComponent<PlayerMovement>().UnFreeze();
                 player2.GetComponent<PlayerMovement>().Move();
                 player1.GetComponent<PlayerMovement>().Freeze();
@@ -67,6 +73,7 @@ public class GameManager : MonoBehaviour
             else if (!player2Request && player1Request)
             {
                 glitchiness = 0;
+                glitchingSound.Stop();
                 player1.GetComponent<PlayerMovement>().UnFreeze();
                 player1.GetComponent<PlayerMovement>().Move();
                 player2.GetComponent<PlayerMovement>().Freeze();

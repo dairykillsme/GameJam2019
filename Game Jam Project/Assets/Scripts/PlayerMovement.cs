@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(jumpKey))
             {
                 rb2d.AddForce(Vector2.up * jumpForce);
-                isTouchingFloor = false;
+                
             }
         }
 
@@ -105,6 +105,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 isTouchingFloor = true;
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground" || collision.tag == "Player")
+        {
+            isTouchingFloor = false;
         }
     }
 }

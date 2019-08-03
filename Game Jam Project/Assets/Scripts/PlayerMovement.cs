@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(leftKey) || Input.GetKey(rightKey) || Input.GetKey(jumpKey))
+        if (Input.GetKeyDown(jumpKey) || Input.GetKey(rightKey) || Input.GetKey(leftKey))
         {
             GameManager.instance.RequestMove(this.gameObject);
             //Move();

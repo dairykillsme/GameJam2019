@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7533970155097697258, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}
       propertyPath: m_Name
-      value: Turret_Right
+      value: Turret_Right Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7533970155097697269, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 7533970155097697269, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -10
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7533970155097697270, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}

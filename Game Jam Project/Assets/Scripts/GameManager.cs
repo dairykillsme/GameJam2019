@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     bool ending = false;
     float glitchiness = 0;
     float initialCameraSize;
+    public float zoomFactor = 1;
     GlitchEffects glitch;
 
     // Start is called before the first frame update
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Transform>().position = cameraPosition;
         if (playerDistance.magnitude > initialCameraSize)
         {
-            mainCamera.GetComponent<Camera>().orthographicSize = playerDistance.magnitude;
+            mainCamera.GetComponent<Camera>().orthographicSize = zoomFactor * playerDistance.magnitude;
         }
     }
 

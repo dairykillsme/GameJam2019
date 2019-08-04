@@ -44,6 +44,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         saveYou.SetActive(true);
+        saveYou.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2f);
         saveYou.SetActive(false);
         StartCoroutine("WhoAreYou");
@@ -53,6 +54,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         whoAreYou.SetActive(true);
+        whoAreYou.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2f);
         whoAreYou.SetActive(false);
         StartCoroutine("ImYou");
@@ -62,6 +64,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         imYou.SetActive(true);
+        imYou.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2f);
         imYou.SetActive(false);
         StartCoroutine("FromFuture");
@@ -71,6 +74,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         fromFuture.SetActive(true);
+        fromFuture.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1f);
         GameManager.instance.Glitch();
         GameManager.instance.player1.GetComponent<Transform>().position = player1Start.position;
@@ -84,6 +88,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         whatsHappening.SetActive(true);
+        whatsHappening.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2f);
         whatsHappening.SetActive(false);
         StartCoroutine("TimeExpects");
@@ -93,6 +98,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         timeExpects.SetActive(true);
+        timeExpects.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2f);
         timeExpects.SetActive(false);
         StartCoroutine("Quantum");
@@ -102,6 +108,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         quantum.SetActive(true);
+        quantum.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2f);
         quantum.SetActive(false);
         StartCoroutine("OnlyOne");
@@ -111,6 +118,7 @@ public class CutSceneScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         onlyOne.SetActive(true);
+        onlyOne.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2f);
         onlyOne.SetActive(false);
         StartCoroutine("End");

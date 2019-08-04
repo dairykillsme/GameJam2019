@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             //Move();
         }
 
-        if (isTouchingFloor)
+        if (isTouchingFloor && !frozen)
         {
             if (rb2d.velocity.x > -1 && rb2d.velocity.x < 1)
             {

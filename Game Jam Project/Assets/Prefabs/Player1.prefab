@@ -108,6 +108,7 @@ MonoBehaviour:
   rightKey: 100
   jumpKey: 119
   preFreezeVelocity: {x: 0, y: 11.170997}
+  frozen: 0
 --- !u!50 &3797440587117530287
 Rigidbody2D:
   serializedVersion: 4

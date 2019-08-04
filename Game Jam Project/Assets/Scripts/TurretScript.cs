@@ -31,12 +31,12 @@ public class TurretScript : MonoBehaviour
     {
         turretAnimator.speed = magicNumber / firingRate;
         turretAnimator.SetTrigger("firing");
-        yield return new WaitForSeconds(3 * firingRate / 4);
+        yield return new WaitForSeconds(2 * firingRate / 3);
         GameObject newBullet = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
         newBullet.GetComponent<BulletScript>().speed = bulletSpeed;
         newBullet.GetComponent<BulletScript>().direction = firingVector;
         turretAudio.Play();
-        yield return new WaitForSeconds(1 * firingRate / 4);
+        yield return new WaitForSeconds(1 * firingRate / 3);
         StartCoroutine("Fire");
     }
 }

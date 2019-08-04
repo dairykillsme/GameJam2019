@@ -597,6 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6eac411d7de30a4f9a6ee4fba89531f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomFactor: 1
 --- !u!1 &147395091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3797440587117530321, guid: 878d35a298f2a3c45a1081413fd7892c,
@@ -57949,21 +57950,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5.89
       objectReference: {fileID: 0}
-    - target: {fileID: 4484450359790613157, guid: f3cf44a7b327eb944bb8db6cfe459971,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484450359790613157, guid: f3cf44a7b327eb944bb8db6cfe459971,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484450359790613156, guid: f3cf44a7b327eb944bb8db6cfe459971,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
     - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
         type: 3}
       propertyPath: platforms.Array.size
@@ -57979,6 +57965,21 @@ PrefabInstance:
       propertyPath: platforms.Array.data[1]
       value: 
       objectReference: {fileID: 1531453729}
+    - target: {fileID: 4484450359790613157, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484450359790613157, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484450359790613156, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3cf44a7b327eb944bb8db6cfe459971, type: 3}
 --- !u!1001 &893196568
@@ -58792,7 +58793,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b22d6b03677ea6d43b417b05a99b16f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 333090ad4bed43640b553b11c003717d, type: 3}
   m_Color: {r: 0.8962264, g: 0.7846256, b: 0.4438857, a: 0.28627452}
   m_FlipX: 0
   m_FlipY: 0
@@ -60807,7 +60808,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1b87d9687024abd4998dd4020728aa41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6af8b4c5e381561409429f0a60eb6555, type: 3}
   m_Color: {r: 0.9811321, g: 0.83592045, b: 0.36561054, a: 0.15294118}
   m_FlipX: 0
   m_FlipY: 0

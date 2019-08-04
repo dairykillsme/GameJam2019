@@ -579,6 +579,7 @@ GameObject:
   - component: {fileID: 1129412045}
   - component: {fileID: 1129412047}
   - component: {fileID: 1129412046}
+  - component: {fileID: 1129412048}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -643,6 +644,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129412044}
   m_CullTransparentMesh: 0
+--- !u!111 &1129412048
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129412044}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1143533769
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +825,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 3538ec892f6143443af3246bd2cca977,
+    m_HighlightedSprite: {fileID: 21300000, guid: c267cb60bdc93eb40933b39b99f6de8d,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
@@ -858,7 +874,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 243383aa50e2b19419de9b0da482ec69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ea97e05eb2b1dd43afcb63b5cddd492, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -142,4 +142,9 @@ public class PlayerMovement : MonoBehaviour
             isTouchingFloor = true;
         }
     }
+
+    internal void MoveLeft()
+    {
+        rb2d.velocity = 5 * Vector2.left;
+    }
 }

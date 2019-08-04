@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         Vector3 cameraPosition = (player1.GetComponent<Transform>().position + player2.GetComponent<Transform>().position) / 2;
         cameraPosition.z = -10;
         mainCamera.GetComponent<Transform>().position = cameraPosition;
-        if (playerDistance.magnitude > zoomFactor * initialCameraSize)
+        if (zoomFactor * playerDistance.magnitude > initialCameraSize)
         {
             mainCamera.GetComponent<Camera>().orthographicSize = zoomFactor * playerDistance.magnitude;
         }

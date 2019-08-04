@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7533970153607415208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.379, y: -0.001, z: 0}
+  m_LocalPosition: {x: -0.37, y: -0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7533970155097697269}
@@ -134,7 +134,6 @@ MonoBehaviour:
   bulletSpeed: 7
   firingVector: {x: -1, y: 0}
   turretAnimator: {fileID: 9026603695244739992}
-  magicNumber: 1
 --- !u!61 &7533970155097697259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01441171, y: 0}
+  m_Offset: {x: 0.090155125, y: 0.46501803}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -159,7 +158,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13117658, y: 0.16}
+  m_Size: {x: 0.8160757, y: 0.06455225}
   m_EdgeRadius: 0
 --- !u!95 &9026603695244739992
 Animator:

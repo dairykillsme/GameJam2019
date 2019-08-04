@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     bool ending = false;
     float glitchiness = 0;
+    float initialCameraSize;
     GlitchEffects glitch;
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         glitch = mainCamera.GetComponent<GlitchEffects>();
+        initialCameraSize = mainCamera.GetComponent<Camera>().orthographicSize;
     }
 
     // Update is called once per frame
@@ -38,6 +40,15 @@ public class GameManager : MonoBehaviour
             }
             glitch.flipIntensity = glitchiness;
             glitch.intensity = glitchiness;
+        }
+
+        Vector2 playerDistance = player1.GetComponent<Transform>().position - player2.GetComponent<Transform>().position;
+        Vector3 cameraPosition = (player1.GetComponent<Transform>().position + player2.GetComponent<Transform>().position) / 2;
+        cameraPosition.z = -10;
+        mainCamera.GetComponent<Transform>().position = cameraPosition;
+        if (playerDistance.magnitude > initialCameraSize)
+        {
+            mainCamera.GetComponent<Camera>().orthographicSize = playerDistance.magnitude;
         }
     }
 

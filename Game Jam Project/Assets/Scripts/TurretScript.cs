@@ -11,12 +11,14 @@ public class TurretScript : MonoBehaviour
     public Vector2 firingVector = Vector2.left;
     public Animator turretAnimator;
     public float magicNumber = 61f / 60f;
+    private AudioSource turretAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("Fire");
         turretAnimator = GetComponent<Animator>();
+        turretAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,15 +31,12 @@ public class TurretScript : MonoBehaviour
     {
         turretAnimator.speed = magicNumber / firingRate;
         turretAnimator.SetTrigger("firing");
-        yield return new WaitForSeconds(2 * firingRate / 3);
+        yield return new WaitForSeconds(3 * firingRate / 4);
         GameObject newBullet = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
         newBullet.GetComponent<BulletScript>().speed = bulletSpeed;
         newBullet.GetComponent<BulletScript>().direction = firingVector;
-        yield return new WaitForSeconds(1 * firingRate / 3);
-        while (turretAnimator.GetCurrentAnimatorStateInfo(0).IsName("TurretIdle"))
-        {
-
-        }
+        turretAudio.Play();
+        yield return new WaitForSeconds(1 * firingRate / 4);
         StartCoroutine("Fire");
     }
 }

@@ -190,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 7533970155097697270, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}
       propertyPath: firingRate
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e47a70b7289a543960ea9fefb4ee3f, type: 3}
@@ -960,7 +960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6eac411d7de30a4f9a6ee4fba89531f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomFactor: 1
 --- !u!81 &1782868905
 AudioListener:
   m_ObjectHideFlags: 0

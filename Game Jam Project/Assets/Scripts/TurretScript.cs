@@ -10,7 +10,7 @@ public class TurretScript : MonoBehaviour
     public float bulletSpeed = 7;
     public Vector2 firingVector = Vector2.left;
     public Animator turretAnimator;
-    public float magicNumber = 61f / 60f;
+    private float magicNumber = 61f / 60f;
     private AudioSource turretAudio;
 
     // Start is called before the first frame update

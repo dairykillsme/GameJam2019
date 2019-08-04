@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject player2;
     public GameObject mainCamera;
     public AudioSource glitchingSound;
+    public bool disabled = false;
 
     bool player1Request = false;
     bool player2Request = false;
@@ -59,13 +60,16 @@ public class GameManager : MonoBehaviour
 
     public void RequestMove(GameObject player)
     {
-        if (player == player1)
+        if (!disabled)
         {
-            player1Request = true;
-        }
-        else
-        {
-            player2Request = true;
+            if (player == player1)
+            {
+                player1Request = true;
+            }
+            else
+            {
+                player2Request = true;
+            }
         }
     }
 

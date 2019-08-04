@@ -765,6 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6eac411d7de30a4f9a6ee4fba89531f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomFactor: 1
 --- !u!1 &147395091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3797440587117530321, guid: 878d35a298f2a3c45a1081413fd7892c,
@@ -873,7 +874,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4e2c6a21baa63a442bb5f70cf165dfeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bf1b450f92642e4a814d4d77307a330, type: 3}
   m_Color: {r: 0.990566, g: 0.85506403, b: 0.85506403, a: 0.32156864}
   m_FlipX: 0
   m_FlipY: 0
@@ -21270,6 +21271,27 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: platforms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: initialState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: buttonDownSprite
+      value: 
+      objectReference: {fileID: -3497714867003365594, guid: f6f71d51480b06b4f9e8f2ccbda9ba60,
+        type: 3}
+    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: platforms.Array.data[1]
+      value: 
+      objectReference: {fileID: 858051897}
     - target: {fileID: 4484450359790613157, guid: f3cf44a7b327eb944bb8db6cfe459971,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21327,27 +21349,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6635352276825772152, guid: f6f71d51480b06b4f9e8f2ccbda9ba60,
         type: 3}
-    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
-        type: 3}
-      propertyPath: platforms.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
-        type: 3}
-      propertyPath: initialState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
-        type: 3}
-      propertyPath: buttonDownSprite
-      value: 
-      objectReference: {fileID: -3497714867003365594, guid: f6f71d51480b06b4f9e8f2ccbda9ba60,
-        type: 3}
-    - target: {fileID: 4484450361041141311, guid: f3cf44a7b327eb944bb8db6cfe459971,
-        type: 3}
-      propertyPath: platforms.Array.data[1]
-      value: 
-      objectReference: {fileID: 858051897}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3cf44a7b327eb944bb8db6cfe459971, type: 3}
 --- !u!1 &943724374
@@ -23223,7 +23224,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5853c6184a6a5a4ea41cb87b96986c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 627685c520e8e5043a16cb9f5791ba84, type: 3}
   m_Color: {r: 1, g: 0.8066038, b: 0.82946086, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
@@ -23383,7 +23384,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e0a7f251276ea9146be696276cdfb878, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95cdbf6aa0b2ac44baeea42da9fe8b78, type: 3}
   m_Color: {r: 0.990566, g: 0.85506403, b: 0.85506403, a: 0.32156864}
   m_FlipX: 0
   m_FlipY: 0

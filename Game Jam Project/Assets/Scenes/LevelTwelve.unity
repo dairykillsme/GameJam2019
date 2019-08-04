@@ -476,7 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6eac411d7de30a4f9a6ee4fba89531f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomFactor: 1
 --- !u!1 &123449835
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +718,7 @@ PrefabInstance:
     - target: {fileID: 476933773250583708, guid: 6169f50cae989bf47ae312af10fb9401,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 476933773250583708, guid: 6169f50cae989bf47ae312af10fb9401,
         type: 3}
@@ -125968,7 +125967,7 @@ PrefabInstance:
     - target: {fileID: 7533970155097697269, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7533970155097697269, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}
@@ -126042,7 +126041,7 @@ PrefabInstance:
     - target: {fileID: 476933773250583708, guid: 6169f50cae989bf47ae312af10fb9401,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 476933773250583708, guid: 6169f50cae989bf47ae312af10fb9401,
         type: 3}
@@ -127293,7 +127292,7 @@ PrefabInstance:
     - target: {fileID: 7533970155097697269, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7533970155097697269, guid: 98e47a70b7289a543960ea9fefb4ee3f,
         type: 3}

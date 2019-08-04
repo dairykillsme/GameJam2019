@@ -5181,7 +5181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12a29bebcfe4cf4380afe65667849dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingTime: 30
+  movingTime: 29
   saveYou: {fileID: 427164991}
   whoAreYou: {fileID: 1870373602}
   imYou: {fileID: 794790530}

@@ -132516,6 +132516,11 @@ PrefabInstance:
       propertyPath: glitchingSound
       value: 
       objectReference: {fileID: 1569187533}
+    - target: {fileID: 8468608681886500105, guid: acc703499e557ad41a96fbb39ccbf56c,
+        type: 3}
+      propertyPath: zoomFactor
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acc703499e557ad41a96fbb39ccbf56c, type: 3}
 --- !u!82 &1569187533 stripped

@@ -9,6 +9,13 @@ public class CutSceneScript : MonoBehaviour
     public GameObject saveYou;
     public GameObject whoAreYou;
     public GameObject imYou;
+    public GameObject fromFuture;
+    public Transform player1Start;
+    public Transform player2Start;
+    public GameObject whatsHappening;
+    public GameObject timeExpects;
+    public GameObject quantum;
+    public GameObject onlyOne;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +64,64 @@ public class CutSceneScript : MonoBehaviour
         imYou.SetActive(true);
         yield return new WaitForSeconds(2f);
         imYou.SetActive(false);
+        StartCoroutine("FromFuture");
+    }
+
+    IEnumerator FromFuture()
+    {
+        yield return new WaitForSeconds(.5f);
+        fromFuture.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        GameManager.instance.Glitch();
+        GameManager.instance.player1.GetComponent<Transform>().position = player1Start.position;
+        yield return new WaitForSeconds(1f);
+        fromFuture.SetActive(false);
+        GameManager.instance.player2.GetComponent<Transform>().position = player2Start.position;
+        StartCoroutine("WhatsHappening");
+    }
+
+    IEnumerator WhatsHappening()
+    {
+        yield return new WaitForSeconds(.5f);
+        whatsHappening.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        whatsHappening.SetActive(false);
+        StartCoroutine("TimeExpects");
+    }
+
+    IEnumerator TimeExpects()
+    {
+        yield return new WaitForSeconds(.5f);
+        timeExpects.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        timeExpects.SetActive(false);
+        StartCoroutine("Quantum");
+    }
+
+    IEnumerator Quantum()
+    {
+        yield return new WaitForSeconds(.5f);
+        quantum.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        quantum.SetActive(false);
+        StartCoroutine("OnlyOne");
+    }
+
+    IEnumerator OnlyOne()
+    {
+        yield return new WaitForSeconds(.5f);
+        onlyOne.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        onlyOne.SetActive(false);
+        StartCoroutine("End");
+    }
+
+    IEnumerator End()
+    {
+        yield return new WaitForSeconds(.5f);
+        GameManager.instance.player1.GetComponent<PlayerMovement>().UnFreeze();
+        GameManager.instance.player2.GetComponent<PlayerMovement>().UnFreeze();
+        GameManager.instance.disabled = false;
     }
 
 }

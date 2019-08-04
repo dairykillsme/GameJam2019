@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     bool ending = false;
     float glitchiness = 0;
     float initialCameraSize;
+    public float zoomFactor = 1;
     GlitchEffects glitch;
 
     // Start is called before the first frame update
@@ -49,13 +51,18 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Transform>().position = cameraPosition;
         if (playerDistance.magnitude > initialCameraSize)
         {
-            mainCamera.GetComponent<Camera>().orthographicSize = playerDistance.magnitude;
+            mainCamera.GetComponent<Camera>().orthographicSize = zoomFactor * playerDistance.magnitude;
         }
     }
 
     void LateUpdate()
     {
         MoveFreeze();
+    }
+
+    internal void Glitch()
+    {
+        StartCoroutine("IntroGlitch");
     }
 
     public void RequestMove(GameObject player)
@@ -124,6 +131,24 @@ public class GameManager : MonoBehaviour
         }
         ending = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    IEnumerator IntroGlitch()
+    {
+        GetComponent<AudioSource>().Play();
+        ending = true;
+        glitch.enabled = true;
+        for (float ft = 0f; ft <= 5; ft += 0.1f)
+        {
+            player1.GetComponent<PlayerMovement>().Freeze();
+            player2.GetComponent<PlayerMovement>().Freeze();
+            glitch.colorIntensity = ft;
+            glitch.flipIntensity = ft;
+            yield return new WaitForSeconds(.00001f);
+        }
+        glitch.colorIntensity = 0;
+        glitch.flipIntensity = 0;
+        ending = false;
     }
 
     internal void FinishLevel(GameObject player)

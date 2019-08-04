@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode jumpKey = KeyCode.None;
 
     public Vector2 preFreezeVelocity;
-    bool frozen = false;
+    public bool frozen = false;
     bool wasFrozen = false;
     float localScale;
     Animator playerAnim;

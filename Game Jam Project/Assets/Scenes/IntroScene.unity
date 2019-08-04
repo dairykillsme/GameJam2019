@@ -579,6 +579,7 @@ GameObject:
   - component: {fileID: 1129412045}
   - component: {fileID: 1129412047}
   - component: {fileID: 1129412046}
+  - component: {fileID: 1129412048}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -603,7 +604,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 37}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129412046
 MonoBehaviour:
@@ -643,6 +644,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129412044}
   m_CullTransparentMesh: 0
+--- !u!95 &1129412048
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129412044}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9a6c23da0417184ea2ea9c754c109b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1143533769
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +829,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 3538ec892f6143443af3246bd2cca977,
+    m_HighlightedSprite: {fileID: 21300000, guid: c267cb60bdc93eb40933b39b99f6de8d,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
@@ -858,7 +878,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 243383aa50e2b19419de9b0da482ec69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ea97e05eb2b1dd43afcb63b5cddd492, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    bool isTouchingFloor = false;
-    public int topSpeed = 10;
-    public int drag = 30;
-    public int jumpForce = 250;
-    public int moveForce = 100;
+    public bool isTouchingFloor = false;
+    public float topSpeed = 10;
+    public float drag = 30;
+    public float jumpForce = 250;
+    public float moveForce = 100;
     public KeyCode leftKey = KeyCode.None;
     public KeyCode rightKey = KeyCode.None;
     public KeyCode jumpKey = KeyCode.None;
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 preFreezeVelocity;
     public bool frozen = false;
     bool wasFrozen = false;
+    bool moving = false;
     float localScale;
     Animator playerAnim;
     public GameObject DustCloud;
@@ -39,25 +40,25 @@ public class PlayerMovement : MonoBehaviour
             //Move();
         }
 
-        if (isTouchingFloor && !frozen)
+        if (Input.GetKeyUp(leftKey) || Input.GetKeyUp(rightKey))
+        {
+            moving = false;
+        }
+
+        if (!frozen && !moving && isTouchingFloor)
         {
             if (rb2d.velocity.x > -1 && rb2d.velocity.x < 1)
             {
-                rb2d.velocity = Vector2.zero;
+                rb2d.velocity = new Vector2(0, rb2d.velocity.y);
             }
             else if (rb2d.velocity.x > 1)
             {
-                rb2d.AddForce(Vector2.left * drag);
+                rb2d.velocity += Vector2.left * drag * Time.deltaTime;
             }
             else if (rb2d.velocity.x < -1)
             {
-                rb2d.AddForce(Vector2.right * drag);
+                rb2d.velocity += Vector2.right * drag *Time.deltaTime;
             }
-        }
-
-        if (rb2d.velocity.y < 0)
-        {
-            isTouchingFloor = false;
         }
 
         UpdateAnimations();
@@ -89,23 +90,22 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(jumpKey))
             {
-                if (rb2d.velocity.y <= 0)
-                {
-                    GetComponent<AudioSource>().Play();
-                    rb2d.velocity += Vector2.up * jumpForce;
-                    isTouchingFloor = false;
-                }
+                GetComponent<AudioSource>().Play();
+                rb2d.velocity += Vector2.up * jumpForce;
+                isTouchingFloor = false;
             }
         }
 
         if (Input.GetKey(rightKey) && rb2d.velocity.x < topSpeed)
         {
-            rb2d.AddForce(Vector2.right * moveForce);
+            moving = true;
+            rb2d.velocity += Vector2.right * moveForce * Time.deltaTime;
         }
 
         if (Input.GetKey(leftKey) && rb2d.velocity.x > -topSpeed)
         {
-            rb2d.AddForce(Vector2.left * moveForce);
+            moving = true;
+            rb2d.velocity += Vector2.left * moveForce * Time.deltaTime;
         }
     }
 
@@ -137,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Ground")
+        if (other.tag == "Ground" && !isTouchingFloor && !frozen)
         {
             isTouchingFloor = true;
         }

@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00087637734, y: 0}
+  m_Offset: {x: 0.000685947, y: -0.00266587}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.05976896, y: 0.010176405}
+  m_Size: {x: 0.07538335, y: 0.015508145}
   m_EdgeRadius: 0
 --- !u!1 &6391080714187286541
 GameObject:
@@ -127,8 +127,8 @@ GameObject:
   - component: {fileID: 6391080714316628833}
   - component: {fileID: 6391080714316628835}
   - component: {fileID: 6391080714316628838}
-  - component: {fileID: 4266706520614217416}
   - component: {fileID: 5961113826122400534}
+  - component: {fileID: 5260346905137795741}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -214,14 +214,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b034794548368498d96df142a96960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTouchingFloor: 0
   topSpeed: 10
-  drag: 50
-  jumpForce: 20
-  moveForce: 100
+  drag: 60
+  jumpForce: 21
+  moveForce: 60
   leftKey: 276
   rightKey: 275
   jumpKey: 273
   preFreezeVelocity: {x: 0, y: 0}
+  frozen: 0
+  DustCloud: {fileID: 0}
 --- !u!50 &6391080714316628835
 Rigidbody2D:
   serializedVersion: 4
@@ -241,7 +244,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &6391080714316628838
 Animator:
@@ -262,22 +265,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &4266706520614217416
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6391080714316628860}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 201fa99c0b29e1b45b1259d22b2c947c, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.1, y: 0.16}
-  m_Direction: 0
 --- !u!82 &5961113826122400534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -374,3 +361,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &5260346905137795741
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391080714316628860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000009313226, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.08080666, y: 0.16}
+  m_EdgeRadius: 0

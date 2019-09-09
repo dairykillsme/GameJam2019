@@ -229,6 +229,8 @@ MonoBehaviour:
   player2: {fileID: 1096570210}
   mainCamera: {fileID: 1782868903}
   glitchingSound: {fileID: 140720734}
+  disabled: 0
+  zoomFactor: 1
 --- !u!4 &140720732
 Transform:
   m_ObjectHideFlags: 0
@@ -680,6 +682,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391080714316628833, guid: 3b7ababe3e1c526459e9d2ea283a1a69,
+        type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391080714316628835, guid: 3b7ababe3e1c526459e9d2ea283a1a69,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b7ababe3e1c526459e9d2ea283a1a69, type: 3}
@@ -1295,12 +1307,22 @@ PrefabInstance:
     - target: {fileID: 3797440587117530285, guid: 878d35a298f2a3c45a1081413fd7892c,
         type: 3}
       propertyPath: drag
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3797440587117530285, guid: 878d35a298f2a3c45a1081413fd7892c,
         type: 3}
       propertyPath: isTouchingFloor
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797440587117530285, guid: 878d35a298f2a3c45a1081413fd7892c,
+        type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797440587117530287, guid: 878d35a298f2a3c45a1081413fd7892c,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3797440587231511944, guid: 878d35a298f2a3c45a1081413fd7892c,
         type: 3}
@@ -1615,6 +1637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bulletPressTime
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484450359790613156, guid: f3cf44a7b327eb944bb8db6cfe459971,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3cf44a7b327eb944bb8db6cfe459971, type: 3}
